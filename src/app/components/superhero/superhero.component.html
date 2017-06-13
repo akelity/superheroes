@@ -1,0 +1,19 @@
+<div *ngIf="superhero">
+  <a [routerLink]="['/superheroes']">Go Back</a>
+  <br>
+  <h2 class="page-header">{{superhero.title}} <small>{{superhero.name}}</small></h2>
+  <div class="row">
+    <div class="col-md-4">
+      <img style="width:100%" class="thumbnail" src="{{imageUrl}}">
+    </div>
+    <div class="col-md-8">
+      <ul class="list-group">
+        <li class="list-group-item">Name: <b>{{superhero.name}}</b></li>
+        <li class="list-group-item">City: <b>{{superhero.city}}</b></li>
+        <li class="list-group-item">Superpowers: <b>{{superhero.superpowers}}</b></li>
+      </ul>
+    </div>
+    <a class="btn btn-default" [routerLink]="['/edit-superhero/'+superhero.$key]">Edit</a>
+    <a (click)="onDeleteClick()" class="btn btn-danger">Delete</a>
+  </div>
+</div>

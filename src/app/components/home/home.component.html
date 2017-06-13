@@ -1,0 +1,16 @@
+<div class="jumbotron jumbotron-fluid text-center">
+  <div class="container">
+    <div *ngIf="!(af.auth | async)">
+      <h1>Superheroes Login</h1>
+      <a (click)="login()"><img src="assets/img/google_login.png"></a>
+    </div>
+    <div *ngIf="(af.auth | async)">
+      <h1>Superheroes List</h1>
+
+      <a [routerLink]="['/superhero/'+superhero.$key]" *ngFor="let superhero of superheroes">
+        <img class="thumbnail img-thumbnail" src="{{superhero.imageUrl}}" />
+      </a>
+
+    </div>
+  </div>
+</div>

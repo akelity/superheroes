@@ -1,0 +1,7 @@
+.thumbnail {
+    display:inline-block;
+    width:15vw;
+    height:15vw;
+    object-fit: contain;
+    margin-bottom:0px;
+}
