@@ -18,6 +18,16 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
   }
+  
+  login(){
+    this.af.auth.login();
+  }
+
+  logout(){
+    this.af.auth.logout();
+    this.flashMessage.show('You are logged out', {cssClass: 'alert-success', timeout: 3000});
+    this.router.navigate(['/']);
+  }
 }
 
 
